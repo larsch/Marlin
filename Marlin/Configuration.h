@@ -292,9 +292,13 @@
   
   // Anders: PID: autotune M303 S210 C5 
   // E3D v6 full
-  #define  DEFAULT_Kp 35.34
-  #define  DEFAULT_Ki 4.28
-  #define  DEFAULT_Kd 72.95
+  // #define  DEFAULT_Kp 35.34
+  // #define  DEFAULT_Ki 4.28
+  // #define  DEFAULT_Kd 72.95
+
+#define  DEFAULT_Kp 32.25
+#define  DEFAULT_Ki 3.31
+#define  DEFAULT_Kd 78.46
   
   // MakerGear
   //#define  DEFAULT_Kp 7.0
