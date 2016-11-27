@@ -101,6 +101,7 @@ volatile unsigned long Stepper::step_events_completed = 0; // The number of step
         Stepper::current_estep_rate[E_STEPPERS],
         Stepper::current_adv_steps[E_STEPPERS];
   #else
+    float Stepper::extruder_advance_k = EXTRUDER_ADVANCE_K;
     long  Stepper::e_steps[E_STEPPERS],
           Stepper::final_advance = 0,
           Stepper::old_advance = 0,
@@ -1237,6 +1238,16 @@ void Stepper::microstep_readings() {
     SERIAL_PROTOCOLLN(digitalRead(E1_MS2_PIN));
   #endif
 }
+
+
+#if ENABLED(ADVANCE)
+void Stepper::advance_M905(const float& k) {
+   if (k >= 0) extruder_advance_k = k;
+    SERIAL_ECHO_START;
+    SERIAL_ECHOPAIR("Advance factor: ", extruder_advance_k);
+    SERIAL_EOL;
+}
+#endif
 
 #if ENABLED(LIN_ADVANCE)
 

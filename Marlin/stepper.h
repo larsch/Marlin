@@ -116,6 +116,7 @@ class Stepper {
                                                   // i.e., the current amount of pressure applied
                                                   // to the spring (=filament).
       #else
+        static float extruder_advance_k;
         static long e_steps[E_STEPPERS];
         static long advance_rate, advance, final_advance;
         static long old_advance;
@@ -265,6 +266,11 @@ class Stepper {
     static FORCE_INLINE float triggered_position_mm(AxisEnum axis) {
       return endstops_trigsteps[axis] * planner.steps_to_mm[axis];
     }
+
+    #if ENABLED(ADVANCE)
+      void advance_M905(const float &k);
+      FORCE_INLINE float get_advance_k() { return extruder_advance_k; }
+    #endif
 
     #if ENABLED(LIN_ADVANCE)
       void advance_M905(const float &k);

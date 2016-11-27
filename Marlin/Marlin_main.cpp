@@ -6452,7 +6452,7 @@ inline void gcode_M503() {
 
 #endif // M605
 
-#if ENABLED(LIN_ADVANCE)
+#if ENABLED(LIN_ADVANCE) || ENABLED(ADVANCE)
   /**
    * M905: Set advance factor
    */
@@ -7605,7 +7605,7 @@ void process_next_command() {
           break;
       #endif // DUAL_X_CARRIAGE
 
-      #if ENABLED(LIN_ADVANCE)
+      #if ENABLED(LIN_ADVANCE) || ENABLED(ADVANCE)
         case 905: // M905 Set advance factor.
           gcode_M905();
           break;
