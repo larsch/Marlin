@@ -1263,7 +1263,7 @@ void kill_screen(const char* lcd_msg) {
     //
     // Set Home Offsets
     //
-    MENU_ITEM(function, MSG_SET_HOME_OFFSETS, lcd_set_home_offsets);
+    // MENU_ITEM(function, MSG_SET_HOME_OFFSETS, lcd_set_home_offsets);
     //MENU_ITEM(gcode, MSG_SET_ORIGIN, PSTR("G92 X0 Y0 Z0"));
 
     //
@@ -1292,7 +1292,7 @@ void kill_screen(const char* lcd_msg) {
     // Preheat ABS
     //
     #if TEMP_SENSOR_0 != 0
-      #if TEMP_SENSOR_1 != 0 || TEMP_SENSOR_2 != 0 || TEMP_SENSOR_3 != 0 || TEMP_SENSOR_BED != 0
+      #if TEMP_SENSOR_1 != 0 || TEMP_SENSOR_2 != 0 || TEMP_SENSOR_3 != 0
         MENU_ITEM(submenu, MSG_PREHEAT_1, lcd_preheat_material1_menu);
         MENU_ITEM(submenu, MSG_PREHEAT_2, lcd_preheat_material2_menu);
       #else
