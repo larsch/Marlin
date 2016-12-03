@@ -296,10 +296,21 @@
   // #define  DEFAULT_Ki 4.28
   // #define  DEFAULT_Kd 72.95
 
-#define  DEFAULT_Kp 32.25
-#define  DEFAULT_Ki 3.31
-#define  DEFAULT_Kd 78.46
-  
+// E3D v6 - fans off
+// #define  DEFAULT_Kp 32.25
+// #define  DEFAULT_Ki 3.31
+// #define  DEFAULT_Kd 78.46
+
+// E3D v6 - retune 2016-11-27
+// #define  DEFAULT_Kp 37.37
+// #define  DEFAULT_Ki 4.47
+// #define  DEFAULT_Kd 78.07
+
+// E3D v6 - retune 2016-11-27 - fans on
+#define  DEFAULT_Kp 49.13
+#define  DEFAULT_Ki 6.85
+#define  DEFAULT_Kd 88.09
+    
   // MakerGear
   //#define  DEFAULT_Kp 7.0
   //#define  DEFAULT_Ki 0.1
